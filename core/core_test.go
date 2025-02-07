@@ -53,20 +53,29 @@ func TestConvertMapToComment(t *testing.T) {
 }
 
 type testRequestProvider struct {
-	withRoute     string
-	withAction    string
-	withFramework string
+	withRoute       string
+	withAction      string
+	withFramework   string
+	withApplication string
+	withController  string
+	withDriver      string
 }
 
-func (p *testRequestProvider) Route() string     { return p.withRoute }
-func (p *testRequestProvider) Action() string    { return p.withAction }
-func (p *testRequestProvider) Framework() string { return p.withFramework }
+func (p *testRequestProvider) Route() string       { return p.withRoute }
+func (p *testRequestProvider) Action() string      { return p.withAction }
+func (p *testRequestProvider) Framework() string   { return p.withFramework }
+func (p *testRequestProvider) Application() string { return p.withApplication }
+func (p *testRequestProvider) Controller() string  { return p.withController }
+func (p *testRequestProvider) Driver() string      { return p.withDriver }
 
 func TestContextInject(t *testing.T) {
 	tagsProvider := &testRequestProvider{
-		withRoute:     "test-route",
-		withAction:    "test-action",
-		withFramework: "test-framework",
+		withRoute:       "test-route",
+		withAction:      "test-action",
+		withFramework:   "test-framework",
+		withApplication: "test-application",
+		withController:  "test-controller",
+		withDriver:      "test-driver",
 	}
 	ctx := context.Background()
 	gotCtx := ContextInject(ctx, tagsProvider)
@@ -90,6 +99,21 @@ func TestContextInject(t *testing.T) {
 			desc: "fetch framework",
 			key:  Framework,
 			want: "test-framework",
+		},
+		{
+			desc: "fetch application",
+			key:  Application,
+			want: "test-application",
+		},
+		{
+			desc: "fetch controller",
+			key:  Controller,
+			want: "test-controller",
+		},
+		{
+			desc: "fetch driver",
+			key:  Driver,
+			want: "test-driver",
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
