@@ -16,7 +16,7 @@ This will start the application server as well as MySQL and Postgres databases
 (NOTE: At present both database will start even if one is used). 
 
 By default the application server will connect with `Postgres` database. To change that,
-update the `db_engine` parameter in the [`Dockerfile`](https://github.com/google/sqlcommenter/blob/master/go/samples/http/Dockerfile) to `mysql`.
+update the `db_engine` parameter in the [`Dockerfile`](https://github.com/govargo/go-sqlcommenter/blob/master/go/samples/http/Dockerfile) to `mysql`.
 
 To view postgres logs, just use the `docker logs` command:
 
