@@ -15,23 +15,38 @@
 package http
 
 type HTTPRequestTags struct {
-	framework string
-	route     string
-	action    string
+	action      string
+	controller  string
+	framework   string
+	route       string
+	application string
+	driver      string
 }
 
-func NewHTTPRequestTags(framework, route, action string) *HTTPRequestTags {
-	return &HTTPRequestTags{framework, route, action}
-}
-
-func (h *HTTPRequestTags) Route() string {
-	return h.route
+func NewHTTPRequestTags(action, controller, framework, route, application, driver string) *HTTPRequestTags {
+	return &HTTPRequestTags{action, controller, framework, route, application, driver}
 }
 
 func (h *HTTPRequestTags) Action() string {
 	return h.action
 }
 
+func (h *HTTPRequestTags) Controller() string {
+	return h.controller
+}
+
 func (h *HTTPRequestTags) Framework() string {
 	return h.framework
+}
+
+func (h *HTTPRequestTags) Route() string {
+	return h.route
+}
+
+func (h *HTTPRequestTags) Application() string {
+	return h.application
+}
+
+func (h *HTTPRequestTags) Driver() string {
+	return h.driver
 }

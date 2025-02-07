@@ -115,16 +115,22 @@ func ExtractTraceparent(ctx context.Context) propagation.MapCarrier {
 
 // RequestTagsProvider adds a basic interface for other libraries like gorilla/mux to implement.
 type RequestTagsProvider interface {
-	Route() string
 	Action() string
+	Controller() string
 	Framework() string
+	Route() string
+	Application() string
+	Driver() string
 }
 
 // ContextInject injects the tags key-value pairs into context,
 // which can be later passed into drivers/ORMs to finally inject them into SQL queries.
 func ContextInject(ctx context.Context, h RequestTagsProvider) context.Context {
-	ctx = context.WithValue(ctx, Route, h.Route())
 	ctx = context.WithValue(ctx, Action, h.Action())
+	ctx = context.WithValue(ctx, Controller, h.Controller())
 	ctx = context.WithValue(ctx, Framework, h.Framework())
+	ctx = context.WithValue(ctx, Route, h.Route())
+	ctx = context.WithValue(ctx, Application, h.Application())
+	ctx = context.WithValue(ctx, Driver, h.Driver())
 	return ctx
 }
