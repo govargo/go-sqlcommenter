@@ -1,6 +1,6 @@
-module github.com/google/sqlcommenter/go/database/sql
+module github.com/govargo/go-sqlcommenter/database/sql
 
-go 1.19
+go 1.23
 
 require github.com/google/sqlcommenter/go/core v0.1.2
 

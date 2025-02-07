@@ -1,3 +1,3 @@
-module github.com/google/sqlcommenter/go/net/http
+module github.com/govargo/go-sqlcommenter/net/http
 
-go 1.19
+go 1.23

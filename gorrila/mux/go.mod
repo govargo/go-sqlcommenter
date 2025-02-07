@@ -1,6 +1,6 @@
-module github.com/google/sqlcommenter/go/gorrila/mux
+module github.com/govargo/go-sqlcommenter/gorrila/mux
 
-go 1.19
+go 1.23
 
 require (
 	github.com/google/sqlcommenter/go/core v0.1.0
