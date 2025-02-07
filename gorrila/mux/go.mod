@@ -3,8 +3,8 @@ module github.com/govargo/go-sqlcommenter/gorrila/mux
 go 1.23
 
 require (
-	github.com/google/sqlcommenter/go/core v0.1.0
-	github.com/google/sqlcommenter/go/net/http v0.0.3-beta
+	github.com/govargo/go-sqlcommenter/core v0.2.0
+	github.com/govargo/go-sqlcommenter/net/http v0.2.0
 	github.com/gorilla/mux v1.8.0
 )
 

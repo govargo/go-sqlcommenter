@@ -5,7 +5,7 @@ SQLcommenter is a plugin/middleware/wrapper to augment application related infor
 ## Installation
 
 ```bash
-go get -u github.com/google/sqlcommenter/go/net/http
+go get -u github.com/govargo/go-sqlcommenter/go/net/http
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ This is a low-level package that can be used to prepare SQLCommeneterTags out of
 
 ```go
 import (
-    sqlcommenterhttp "github.com/google/sqlcommenter/go/net/http"
+    sqlcommenterhttp "github.com/govargo/go-sqlcommenter/net/http"
 )
 
 requestTags := sqlcommenterhttp.NewHTTPRequestTags(framework string, route string, action string)

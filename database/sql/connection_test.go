@@ -18,7 +18,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/google/sqlcommenter/go/core"
+	"github.com/govargo/go-sqlcommenter/core"
 )
 
 func TestWithComment_NoContext(t *testing.T) {

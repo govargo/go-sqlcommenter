@@ -5,7 +5,7 @@ SQLcommenter is a plugin/middleware/wrapper to augment application related infor
 ## Installation
 
 ```shell
-go get -u github.com/google/sqlcommenter/go/gorrila/mux
+go get -u github.com/govargo/go-sqlcommenter/gorrila/mux
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ This library provides a middleware that extracts SQLCommenter HTTP request tags 
 import (
     "net/http"
 
-    sqlcommentermux "github.com/google/sqlcommenter/go/gorrila/mux"
+    sqlcommentermux "github.com/govargo/go-sqlcommenter/gorrila/mux"
     "github.com/gorilla/mux"
 )
 
@@ -41,7 +41,7 @@ import (
     "log"
     "net/http"
 
-    sqlcommentermux "github.com/google/sqlcommenter/go/gorrila/mux"
+    sqlcommentermux "github.com/govargo/go-sqlcommenter/gorrila/mux"
     "github.com/gorilla/mux"
     "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux"
     "go.opentelemetry.io/otel"

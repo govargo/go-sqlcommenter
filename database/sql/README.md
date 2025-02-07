@@ -5,7 +5,7 @@ SQLcommenter is a plugin/middleware/wrapper to augment application related infor
 ## Installation
 
 ```shell
-go get -u github.com/google/sqlcommenter/go/database/sql
+go get -u github.com/govargo/go-sqlcommenter/database/sql
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ Due to inherent nature of Go, the safer way to pass information from framework t
 
 ```go
 import (
-    gosql "github.com/google/sqlcommenter/go/database/sql"
-    sqlcommentercore "github.com/google/sqlcommenter/go/core"
+    gosql "github.com/govargo/go-sqlcommenter/database/sql"
+    sqlcommentercore "github.com/govargo/go-sqlcommenter/core"
     _ "github.com/lib/pq" // or any other database driver
 )
 
